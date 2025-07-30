@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-time market data and trading instruments on TradePro">
+    <title>Markets | TradePro Trading Platform</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Fav-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="assets/TradPro-Header-Logo.png" alt="TradePro"></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="about.html">About</a></li>
+                   <li><a href="contact.html" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Market Page Content -->
+    <section class="banner">
+        <div class="container banner-container">
+            <div class="banner-content">
+                <h1>Global Markets at Your Fingertips</h1>
+                <p>Access real-time prices, charts, and trading opportunities across all major asset classes. Make
+                    informed decisions with our comprehensive market data.</p>
+                <a href="#" class="btn">Start Trading</a>
+            </div>
+            <div class="graph-animation">
+                <div class="graph-line"></div>
+                <svg class="graph-path" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M0,50 C100,30 150,70 250,40 C350,10 400,60 500,50" />
+                </svg>
+                <div class="graph-point" style="left: 20%; top: 50%;"></div>
+                <div class="graph-point" style="left: 50%; top: 40%;"></div>
+                <div class="graph-point" style="left: 80%; top: 60%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="markets">
+        <div class="container">
+            <div class="market-categories">
+                <button class="market-category active" data-category="all">All Markets</button>
+                <button class="market-category" data-category="crypto">Cryptocurrencies</button>
+                <button class="market-category" data-category="forex">Forex</button>
+                <button class="market-category" data-category="stocks">Stocks</button>
+                <button class="market-category" data-category="commodities">Commodities</button>
+                <button class="market-category" data-category="indices">Indices</button>
+            </div>
+
+            <div class="market-stats">
+                <div class="stat-card">
+                    <h3>Total Market Cap</h3>
+                    <div class="value">$2.14T</div>
+                    <div class="change positive">+2.34% <i class="fas fa-arrow-up"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>24h Volume</h3>
+                    <div class="value">$98.7B</div>
+                    <div class="change positive">+5.67% <i class="fas fa-arrow-up"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>BTC Dominance</h3>
+                    <div class="value">48.2%</div>
+                    <div class="change negative">-1.23% <i class="fas fa-arrow-down"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>ETH Dominance</h3>
+                    <div class="value">18.7%</div>
+                    <div class="change positive">+0.45% <i class="fas fa-arrow-up"></i></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Markets</h3>
+                    <div class="value">12,456</div>
+                    <div class="change positive">+124 <i class="fas fa-arrow-up"></i></div>
+                </div>
+            </div>
+
+            <div class="market-table-container">
+                <table class="market-table">
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                            <th>24h Volume</th>
+                            <th>Market Cap</th>
+                            <th>Chart</th>
+                            <th>Trade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-category="crypto">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/kb48ez66" alt="Bitcoin"
+                                        class="asset-icon">
+                                    <span class="asset-name">Bitcoin <span class="asset-symbol">BTC</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$42,850.12</td>
+                            <td><span class="price-change positive">+2.34%</span></td>
+                            <td>$28.4B</td>
+                            <td>$820.5B</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,20 L10,15 L20,18 L30,12 L40,15 L50,10 L60,12 L70,8 L80,10"
+                                        stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                        <tr data-category="crypto">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/2ufwvdrv" alt="Ethereum"
+                                        class="asset-icon">
+                                    <span class="asset-name">Ethereum <span class="asset-symbol">ETH</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$2,315.67</td>
+                            <td><span class="price-change positive">+1.78%</span></td>
+                            <td>$14.2B</td>
+                            <td>$278.3B</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,15 L10,12 L20,15 L30,10 L40,12 L50,8 L60,10 L70,12 L80,15"
+                                        stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                        <tr data-category="forex">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png"
+                                        alt="EUR/USD" class="asset-icon">
+                                    <span class="asset-name">EUR/USD <span class="asset-symbol">EURUSD</span></span>
+                                </div>
+                            </td>
+                            <td class="price">1.0924</td>
+                            <td><span class="price-change negative">-0.45%</span></td>
+                            <td>$320.5B</td>
+                            <td>-</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,20 L10,22 L20,18 L30,20 L40,22 L50,25 L60,22 L70,25 L80,22"
+                                        stroke="#e74c3c" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                        <tr data-category="stocks">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://s3-symbol-logo.tradingview.com/apple--big.svg" alt="Apple"
+                                        class="asset-icon">
+                                    <span class="asset-name">Apple Inc <span class="asset-symbol">AAPL</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$189.37</td>
+                            <td><span class="price-change positive">+0.89%</span></td>
+                            <td>$12.8B</td>
+                            <td>$2.96T</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,15 L10,12 L20,10 L30,12 L40,15 L50,12 L60,15 L70,12 L80,15"
+                                        stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                        <tr data-category="commodities">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/4urpyf8z" alt="Gold"
+                                        class="asset-icon">
+                                    <span class="asset-name">Gold <span class="asset-symbol">XAU</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$1,982.50</td>
+                            <td><span class="price-change negative">-0.32%</span></td>
+                            <td>$85.3B</td>
+                            <td>-</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,20 L10,18 L20,20 L30,22 L40,20 L50,22 L60,20 L70,22 L80,20"
+                                        stroke="#e74c3c" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                        <tr data-category="indices">
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/mryzr888" alt="S&P 500"
+                                        class="asset-icon">
+                                    <span class="asset-name">S&P 500 <span class="asset-symbol">SPX</span></span>
+                                </div>
+                            </td>
+                            <td class="price">4,567.23</td>
+                            <td><span class="price-change positive">+1.12%</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <svg width="80" height="30" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,15 L10,12 L20,10 L30,12 L40,10 L50,12 L60,10 L70,12 L80,15"
+                                        stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                            <td><button class="btn" style="padding: 8px 15px; font-size: 14px;">Trade</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="market-chart">
+                <h3>Bitcoin (BTC) Price Chart</h3>
+                <!-- In a real implementation, this would be a live chart from a library like TradingView or Chart.js -->
+                 <img src="https://tinyurl.com/2f96vu9t" alt="chart-png"> 
+            </div>
+
+            <div class="watchlist">
+                <div class="watchlist-header">
+                    <h3 class="watchlist-title">Your Watchlist</h3>
+                    <div class="watchlist-actions">
+                        <button class="watchlist-btn">Edit</button>
+                        <button class="watchlist-btn primary">+ Add Assets</button>
+                    </div>
+                </div>
+                <table class="market-table">
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                            <th>Price Alert</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/54bnun4w" alt="Solana"
+                                        class="asset-icon">
+                                    <span class="asset-name">Solana <span class="asset-symbol">SOL</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$98.45</td>
+                            <td><span class="price-change negative">-3.12%</span></td>
+                            <td>
+                                <div class="alert-status">$110.00 <i class="fas fa-bell"
+                                        style="color: var(--primary-orange);"></i></div>
+                            </td>
+                            <td>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;">Trade</button>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;"><i
+                                        class="fas fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/ywa49fvf" alt="Cardano"
+                                        class="asset-icon">
+                                    <span class="asset-name">Cardano <span class="asset-symbol">ADA</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$0.52</td>
+                            <td><span class="price-change positive">+0.89%</span></td>
+                            <td>
+                                <div class="alert-status">No alerts</div>
+                            </td>
+                            <td>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;">Trade</button>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;"><i
+                                        class="fas fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="asset">
+                                    <img src="https://tinyurl.com/bdey5bbn" alt="Polygon"
+                                        class="asset-icon">
+                                    <span class="asset-name">Polygon <span class="asset-symbol">MATIC</span></span>
+                                </div>
+                            </td>
+                            <td class="price">$0.78</td>
+                            <td><span class="price-change positive">+1.45%</span></td>
+                            <td>
+                                <div class="alert-status">$0.85 <i class="fas fa-bell"
+                                        style="color: var(--primary-orange);"></i></div>
+                            </td>
+                            <td>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;">Trade</button>
+                                <button class="watchlist-btn" style="padding: 5px 10px; font-size: 13px;"><i
+                                        class="fas fa-times"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="news-section">
+                <h3 class="section-title">Market News</h3>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="https://tinyurl.com/bdfa6up4"
+                            alt="Bitcoin News" class="news-image">
+                        <div class="news-content">
+                            <div class="news-source">
+                                <img src="https://logo.clearbit.com/coindesk.com" alt="CoinDesk">
+                                CoinDesk
+                            </div>
+                            <h4 class="news-title">Bitcoin Surges Past $43,000 as Institutional Interest Grows</h4>
+                            <div class="news-date">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="https://tinyurl.com/38f7spta"
+                            alt="Ethereum News" class="news-image">
+                        <div class="news-content">
+                            <div class="news-source">
+                                <img src="https://logo.clearbit.com/cointelegraph.com" alt="CoinTelegraph">
+                                CoinTelegraph
+                            </div>
+                            <h4 class="news-title">Ethereum Layer 2 Solutions See Record Growth in Q3 2023</h4>
+                            <div class="news-date">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="https://tinyurl.com/39y497pv"
+                            alt="Regulation News" class="news-image">
+                        <div class="news-content">
+                            <div class="news-source">
+                                <img src="https://logo.clearbit.com/bloomberg.com" alt="Bloomberg">
+                                Bloomberg
+                            </div>
+                            <h4 class="news-title">Global Regulators Announce New Framework for Crypto Assets</h4>
+                            <div class="news-date">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo orange"><img src="assets/TradePro-Footer_logo.png" alt="TradePro"></a>
+                <p>Advanced trading platform providing real-time market data, analytics, and secure trading for modern investors.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trading</a></li>
+                    <li><a>Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a>Spot Trading</a></li>
+                    <li><a>Futures</a></li>
+                    <li><a">Margin Trading</a></li>
+                    <li><a>API</a></li>
+                    <li><a>Staking</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a">Help Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a>System Status</a></li>
+                    <li><a>Fees</a></li>
+                    <li><a>Legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TradePro by Walspire Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+        // Market Category Filter
+        const marketCategories = document.querySelectorAll('.market-category');
+        const marketRows = document.querySelectorAll('.market-table tbody tr');
+
+        marketCategories.forEach(category => {
+            category.addEventListener('click', () => {
+                // Remove active class from all categories
+                marketCategories.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked category
+                category.classList.add('active');
+
+                const categoryFilter = category.getAttribute('data-category');
+
+                // Filter rows
+                marketRows.forEach(row => {
+                    if (categoryFilter === 'all' || row.getAttribute('data-category') === categoryFilter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Watchlist Actions
+        const watchlistRemoveBtns = document.querySelectorAll('.watchlist-btn .fa-times');
+
+        watchlistRemoveBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const row = this.closest('tr');
+                row.style.opacity = '0';
+                setTimeout(() => {
+                    row.remove();
+                }, 300);
+            });
+        });
+
+        // Simulate live price updates
+        function updatePrices() {
+            const prices = document.querySelectorAll('.price');
+            const changes = document.querySelectorAll('.price-change');
+
+            prices.forEach(price => {
+                const currentValue = parseFloat(price.textContent.replace(/[^0-9.-]/g, ''));
+                const changePercent = (Math.random() * 2 - 1) * 0.5; // Random change between -0.5% and +0.5%
+                const newValue = currentValue * (1 + changePercent / 100);
+
+                // Update price display
+                if (currentValue > 1) {
+                    price.textContent = '$' + newValue.toFixed(2);
+                } else {
+                    price.textContent = '$' + newValue.toFixed(4);
+                }
+
+                // Find corresponding change element
+                const row = price.closest('tr');
+                const changeElement = row.querySelector('.price-change');
+
+                // Update change display
+                if (changeElement) {
+                    const isPositive = changePercent >= 0;
+                    changeElement.textContent = (isPositive ? '+' : '') + changePercent.toFixed(2) + '%';
+                    changeElement.className = 'price-change ' + (isPositive ? 'positive' : 'negative');
+
+                    // Update mini chart
+                    const chart = row.querySelector('svg path');
+                    if (chart) {
+                        chart.setAttribute('stroke', isPositive ? '#2ecc71' : '#e74c3c');
+                        // Generate random chart data
+                        let pathData = 'M0,15';
+                        for (let i = 1; i <= 8; i++) {
+                            const x = i * 10;
+                            const y = 15 + (Math.random() * 10 - 5) * (isPositive ? 1 : -1);
+                            pathData += ` L${x},${y}`;
+                        }
+                        chart.setAttribute('d', pathData);
+                    }
+                }
+            });
+
+            setTimeout(updatePrices, 3000);
+        }
+
+        // Start price updates after a short delay
+        setTimeout(updatePrices, 1000);
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('chartContainer');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Price',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderColor: '#1e3f20',
+                        backgroundColor: 'rgba(30, 63, 32, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Live Price Chart (Placeholder)'
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

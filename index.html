@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium trading platform with real-time market data and analytics">
+    <title>TradePro | Advanced Trading Platform</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Fav-icon.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="assets/TradPro-Header-Logo.png" alt="TradePro"></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container banner-container">
+            <div class="banner-content">
+                <h1>Advanced Trading Platform for Modern Investors</h1>
+                <p>Access real-time market data, advanced charting tools, and secure trading all in one place. Start your trading journey with us today.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="graph-animation">
+                <div class="graph-line"></div>
+                <svg class="graph-path" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M0,50 C100,10 150,90 250,30 C350,-30 400,70 500,50" />
+                </svg>
+                <div class="graph-point" style="left: 20%; top: 60%;"></div>
+                <div class="graph-point" style="left: 50%; top: 30%;"></div>
+                <div class="graph-point" style="left: 80%; top: 50%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Trusted by leading financial institutions</h2>
+            <div class="client-logos">
+                <div class="client-logos-slide">
+                    <img src="https://logo.clearbit.com/jpmorgan.com" alt="JPMorgan" class="client-logo">
+                    <img src="https://logo.clearbit.com/goldmansachs.com" alt="Goldman Sachs" class="client-logo">
+                    <img src="https://logo.clearbit.com/morganstanley.com" alt="Morgan Stanley" class="client-logo">
+                    <img src="https://logo.clearbit.com/blackrock.com" alt="BlackRock" class="client-logo">
+                    <img src="https://logo.clearbit.com/fidelity.com" alt="Fidelity" class="client-logo">
+                    <img src="https://logo.clearbit.com/vanguard.com" alt="Vanguard" class="client-logo">
+                    <img src="https://logo.clearbit.com/barclays.com" alt="Barclays" class="client-logo">
+                    <img src="https://logo.clearbit.com/citi.com" alt="Citi" class="client-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Column Section -->
+    <section class="two-column">
+        <div class="container two-column-container">
+            <div class="two-column-content one">
+                <h2>Powerful Trading Tools at Your Fingertips</h2>
+                <p>Our platform offers a suite of advanced trading tools designed to help you make informed decisions. From real-time analytics to customizable charts, we provide everything you need to succeed in today's markets.</p>
+                <p>Whether you're a beginner or an experienced trader, our intuitive interface makes it easy to execute trades, monitor your portfolio, and stay ahead of market trends.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="two-column-image">
+                <img src="https://tinyurl.com/23zcmf3e" alt="Trading Platform Interface">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabbed Section -->
+    <section class="tabbed-section">
+        <div class="container two-column-container">
+            <div class="two-column-image">
+                <img src="https://tinyurl.com/7byxhadm" alt="Market Data Analysis">
+            </div>
+            <div class="two-column-content two">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab1">Real-time Data</button>
+                    <button class="tab-btn" data-tab="tab2">Advanced Charts</button>
+                    <button class="tab-btn" data-tab="tab3">Risk Management</button>
+                </div>
+                <div class="tab-content active" id="tab1">
+                    <h3>Instant Market Updates</h3>
+                    <p>Get access to real-time price quotes, volume data, and market depth for all major financial instruments. Our low-latency technology ensures you never miss a trading opportunity.</p>
+                    <p>With millisecond updates, you can react to market movements as they happen, giving you the edge over competitors.</p>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <h3>Professional Charting Tools</h3>
+                    <p>Customize your charts with over 100 technical indicators and drawing tools. Save your preferred layouts and access them from any device.</p>
+                    <p>Our advanced charting package includes everything from simple line charts to complex Renko and Kagi charts for professional traders.</p>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <h3>Protect Your Capital</h3>
+                    <p>Set stop-loss and take-profit orders directly from the chart. Our platform includes advanced risk management tools to help protect your investments.</p>
+                    <p>Monitor your exposure in real-time and receive alerts when your risk parameters are approached.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading List Section -->
+    <section class="trading-list">
+        <div class="container">
+            <h2 class="section-title">Market Overview</h2>
+            <div class="filter-controls">
+                <input type="text" class="search-box" placeholder="Search coins...">
+                <select class="filter-select">
+                    <option value="all">All Assets</option>
+                    <option value="crypto">Cryptocurrencies</option>
+                    <option value="forex">Forex</option>
+                    <option value="stocks">Stocks</option>
+                    <option value="commodities">Commodities</option>
+                </select>
+            </div>
+            <div class="table-responsive">
+                <table class="trading-table">
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                            <th>24h Volume</th>
+                            <th>Rating</th>
+                            <th>Chart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <img src="https://tinyurl.com/kb48ez66" alt="Bitcoin" class="coin-icon">
+                                    <span>Bitcoin (BTC)</span>
+                                </div>
+                            </td>
+                            <td>$42,850.12</td>
+                            <td class="price-up">+2.34%</td>
+                            <td>$28.4B</td>
+                            <td><span class="rating">★★★★☆</span></td>
+                            <td>
+                                <svg class="mini-graph" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,30 L10,25 L20,20 L30,15 L40,20 L50,10 L60,15 L70,5 L80,10" stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <img src="https://tinyurl.com/2ufwvdrv" alt="Ethereum" class="coin-icon">
+                                    <span>Ethereum (ETH)</span>
+                                </div>
+                            </td>
+                            <td>$2,315.67</td>
+                            <td class="price-up">+1.78%</td>
+                            <td>$14.2B</td>
+                            <td><span class="rating">★★★★☆</span></td>
+                            <td>
+                                <svg class="mini-graph" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,25 L10,20 L20,25 L30,15 L40,20 L50,10 L60,15 L70,10 L80,15" stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <img src="https://tinyurl.com/54bnun4w" alt="Solana" class="coin-icon">
+                                    <span>Solana (SOL)</span>
+                                </div>
+                            </td>
+                            <td>$98.45</td>
+                            <td class="price-down">-3.12%</td>
+                            <td>$2.8B</td>
+                            <td><span class="rating">★★★☆☆</span></td>
+                            <td>
+                                <svg class="mini-graph" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,15 L10,20 L20,10 L30,15 L40,5 L50,10 L60,20 L70,25 L80,20" stroke="#e74c3c" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <img src="https://tinyurl.com/ywa49fvf" alt="Cardano" class="coin-icon">
+                                    <span>Cardano (ADA)</span>
+                                </div>
+                            </td>
+                            <td>$0.52</td>
+                            <td class="price-up">+0.89%</td>
+                            <td>$1.2B</td>
+                            <td><span class="rating">★★★☆☆</span></td>
+                            <td>
+                                <svg class="mini-graph" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,20 L10,15 L20,20 L30,15 L40,20 L50,15 L60,20 L70,15 L80,20" stroke="#2ecc71" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="coin-info">
+                                    <img src="https://tinyurl.com/3kt2996u" alt="XRP" class="coin-icon">
+                                    <span>XRP (XRP)</span>
+                                </div>
+                            </td>
+                            <td>$0.56</td>
+                            <td class="price-down">-1.45%</td>
+                            <td>$1.8B</td>
+                            <td><span class="rating">★★☆☆☆</span></td>
+                            <td>
+                                <svg class="mini-graph" viewBox="0 0 80 30" preserveAspectRatio="none">
+                                    <path d="M0,20 L10,25 L20,15 L30,20 L40,25 L50,20 L60,15 L70,20 L80,25" stroke="#e74c3c" stroke-width="2" fill="none" />
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Trading?</h2>
+            <p>Join thousands of traders who trust our platform for their investment needs. Create your account today and get access to global markets with competitive fees and premium features.</p>
+            <a href="#" class="btn">Sign Up Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo orange"><img src="assets/TradePro-Footer_logo.png" alt="TradePro"></a>
+                <p>Advanced trading platform providing real-time market data, analytics, and secure trading for modern investors.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trading</a></li>
+                    <li><a>Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a>Spot Trading</a></li>
+                    <li><a>Futures</a></li>
+                    <li><a">Margin Trading</a></li>
+                    <li><a>API</a></li>
+                    <li><a>Staking</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a">Help Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a>System Status</a></li>
+                    <li><a>Fees</a></li>
+                    <li><a>Legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TradePro by Walspire Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+        <script>
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Search Functionality
+        const searchBox = document.querySelector('.search-box');
+        const tradingTable = document.querySelector('.trading-table tbody');
+        const rows = tradingTable.querySelectorAll('tr');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            rows.forEach(row => {
+                const coinName = row.querySelector('.coin-info span').textContent.toLowerCase();
+                if (coinName.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter Functionality
+        const filterSelect = document.querySelector('.filter-select');
+        
+        filterSelect.addEventListener('change', (e) => {
+            // In a real implementation, this would filter the table based on asset type
+            // For this demo, we'll just log the selected value
+            console.log('Filter by:', e.target.value);
+        });
+
+        // Animated Graph Points
+        const graphPoints = document.querySelectorAll('.graph-point');
+        
+        function animatePoints() {
+            graphPoints.forEach((point, index) => {
+                setTimeout(() => {
+                    point.style.transform = 'translate(-50%, -50%) scale(1.2)';
+                    setTimeout(() => {
+                        point.style.transform = 'translate(-50%, -50%) scale(1)';
+                    }, 300);
+                }, index * 500);
+            });
+            
+            setTimeout(animatePoints, 3000);
+        }
+        
+        animatePoints();
+    </script>
+</body>
+</html>

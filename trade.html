@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade | Your Trading Platform</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Fav-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+        <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="assets/TradPro-Header-Logo.png" alt="TradePro"></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="about.html">About</a></li>
+                   <li><a href="contact.html" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section-md-padding">
+        <div class="trading-container">
+            <!-- Asset Selector -->
+            <div class="asset-selector">
+                <input type="text" class="asset-search" placeholder="Search assets...">
+                
+                <div class="asset-categories">
+                    <button class="asset-category active">All</button>
+                    <button class="asset-category">Crypto</button>
+                    <button class="asset-category">Forex</button>
+                    <button class="asset-category">Stocks</button>
+                </div>
+                
+                <div class="asset-list">
+                    <!-- Bitcoin -->
+                    <div class="asset-item active">
+                        <img src="https://tinyurl.com/kb48ez66" alt="Bitcoin" class="asset-icon">
+                        <span class="asset-name">Bitcoin</span>
+                        <span class="asset-price">$42,850.12</span>
+                        <span class="price-change positive">+2.34%</span>
+                    </div>
+                    
+                    <!-- Ethereum -->
+                    <div class="asset-item">
+                        <img src="https://tinyurl.com/2ufwvdrv" alt="Ethereum" class="asset-icon">
+                        <span class="asset-name">Ethereum</span>
+                        <span class="asset-price">$2,315.67</span>
+                        <span class="price-change positive">+1.78%</span>
+                    </div>
+                    
+                    <!-- Solana -->
+                    <div class="asset-item">
+                        <img src="https://tinyurl.com/54bnun4w" alt="Solana" class="asset-icon">
+                        <span class="asset-name">Solana</span>
+                        <span class="asset-price">$98.45</span>
+                        <span class="price-change negative">-3.12%</span>
+                    </div>
+                    
+                    <!-- Cardano -->
+                    <div class="asset-item">
+                        <img src="https://tinyurl.com/ywa49fvf" alt="Cardano" class="asset-icon">
+                        <span class="asset-name">Cardano</span>
+                        <span class="asset-price">$0.52</span>
+                        <span class="price-change positive">+0.89%</span>
+                    </div>
+                    
+                    <!-- EUR/USD -->
+                    <div class="asset-item">
+                        <img src="https://s2.coinmarketcap.com/static/img/exchanges/64x64/89.png" alt="EUR/USD" class="asset-icon">
+                        <span class="asset-name">EUR/USD</span>
+                        <span class="asset-price">1.0924</span>
+                        <span class="price-change negative">-0.45%</span>
+                    </div>
+                    
+                    <!-- Apple -->
+                    <div class="asset-item">
+                        <img src="https://s3-symbol-logo.tradingview.com/apple--big.svg" alt="Apple" class="asset-icon">
+                        <span class="asset-name">Apple Inc</span>
+                        <span class="asset-price">$189.37</span>
+                        <span class="price-change positive">+0.89%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trading View -->
+            <div class="trading-view">
+                <!-- Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <div class="chart-title">
+                            <img src="https://tinyurl.com/kb48ez66" alt="Bitcoin" id="current-asset-icon">
+                            <h3 id="current-asset-name">Bitcoin <span id="current-asset-price">$42,850.12</span> <span class="price-change positive" id="current-asset-change">+2.34%</span></h3>
+                        </div>
+                        <div class="chart-actions">
+                            <button class="chart-btn active">1H</button>
+                            <button class="chart-btn">1D</button>
+                            <button class="chart-btn">1W</button>
+                            <button class="chart-btn">1M</button>
+                            <button class="chart-btn">1Y</button>
+                        </div>
+                    </div>
+                    <canvas id="priceChart"></canvas>
+                </div>
+                
+                <!-- Order Form -->
+                <div class="order-form">
+                    <div class="order-tabs">
+                        <button class="order-tab active">Market</button>
+                        <button class="order-tab">Limit</button>
+                        <button class="order-tab">Stop</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Amount (USD)</label>
+                        <input type="number" class="form-control" placeholder="0.00">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Quantity</label>
+                            <input type="number" class="form-control" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Total</label>
+                            <input type="number" class="form-control" placeholder="0.00" readonly>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-trade btn-buy">Buy BTC</button>
+                    <button class="btn-trade btn-sell">Sell BTC</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer here -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo orange"><img src="assets/TradePro-Footer_logo.png" alt="TradePro"></a>
+                <p>Advanced trading platform providing real-time market data, analytics, and secure trading for modern investors.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markets</a></li>
+                    <li><a href="trade.html">Trading</a></li>
+                    <li><a>Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a>Spot Trading</a></li>
+                    <li><a>Futures</a></li>
+                    <li><a">Margin Trading</a></li>
+                    <li><a>API</a></li>
+                    <li><a>Staking</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a">Help Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a>System Status</a></li>
+                    <li><a>Fees</a></li>
+                    <li><a>Legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TradePro by Walspire Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+            <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Improved Chart Initialization
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            
+            // Generate more realistic price data
+            function generateRealisticPriceData(basePrice, points = 24, volatility = 0.02) {
+                let data = [basePrice];
+                for (let i = 1; i < points; i++) {
+                    // Random walk with slight upward bias (60% chance of increase)
+                    const change = Math.random() > 0.4 ? 
+                        1 + (Math.random() * volatility) : 
+                        1 - (Math.random() * volatility);
+                    data.push(data[i-1] * change);
+                }
+                return data;
+            }
+            
+            const initialPrice = 42850.12;
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 24}, (_, i) => `${i}:00`),
+                    datasets: [{
+                        label: 'Price',
+                        data: generateRealisticPriceData(initialPrice),
+                        borderColor: '#1e3f20',
+                        backgroundColor: 'rgba(30, 63, 32, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.1, // Reduced tension for more natural curves
+                        fill: true,
+                        pointRadius: 0 // Remove points for cleaner look
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'nearest',
+                        axis: 'x',
+                        intersect: false
+                    }
+                }
+            });
+            
+            // Asset Selection
+            const assetItems = document.querySelectorAll('.asset-item');
+            assetItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    assetItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const assetName = this.querySelector('.asset-name').textContent;
+                    const assetPrice = this.querySelector('.asset-price').textContent;
+                    const assetChange = this.querySelector('.price-change').textContent;
+                    const assetChangeClass = this.querySelector('.price-change').classList.contains('positive') ? 'positive' : 'negative';
+                    const assetIcon = this.querySelector('.asset-icon').src;
+                    
+                    document.getElementById('current-asset-name').innerHTML = `${assetName} <span id="current-asset-price">${assetPrice}</span>`;
+                    const changeElement = document.getElementById('current-asset-change');
+                    changeElement.textContent = assetChange;
+                    changeElement.className = `price-change ${assetChangeClass}`;
+                    document.getElementById('current-asset-icon').src = assetIcon;
+                    
+                    // Generate new realistic data for selected asset
+                    const basePrice = parseFloat(assetPrice.replace(/[^0-9.]/g, ''));
+                    priceChart.data.datasets[0].data = generateRealisticPriceData(basePrice);
+                    priceChart.update();
+                    
+                    // Update trade buttons
+                    document.querySelector('.btn-buy').textContent = `Buy ${assetName.split(' ')[0]}`;
+                    document.querySelector('.btn-sell').textContent = `Sell ${assetName.split(' ')[0]}`;
+                });
+            });
+            
+            // Improved Price Update Simulation
+            function simulatePriceUpdates() {
+                assetItems.forEach(item => {
+                    const priceElement = item.querySelector('.asset-price');
+                    const changeElement = item.querySelector('.price-change');
+                    let currentPrice = parseFloat(priceElement.textContent.replace(/[^0-9.]/g, ''));
+                    
+                    // More realistic price changes (smaller fluctuations)
+                    const changePercent = (Math.random() * 0.6 - 0.3); // -0.3% to +0.3%
+                    const newPrice = currentPrice * (1 + changePercent / 100);
+                    
+                    // Update display with proper formatting
+                    const isDollar = priceElement.textContent.includes('$');
+                    const isEuro = priceElement.textContent.includes('€');
+                    
+                    priceElement.textContent = newPrice.toFixed(isDollar || isEuro ? 2 : 4);
+                    if (isDollar) priceElement.textContent = '$' + priceElement.textContent;
+                    if (isEuro) priceElement.textContent = '€' + priceElement.textContent;
+                    
+                    changeElement.textContent = (changePercent >= 0 ? '+' : '') + changePercent.toFixed(2) + '%';
+                    
+                    if (changePercent >= 0) {
+                        changeElement.classList.remove('negative');
+                        changeElement.classList.add('positive');
+                        priceElement.classList.add('price-up-animation');
+                        setTimeout(() => priceElement.classList.remove('price-up-animation'), 1500);
+                    } else {
+                        changeElement.classList.remove('positive');
+                        changeElement.classList.add('negative');
+                        priceElement.classList.add('price-down-animation');
+                        setTimeout(() => priceElement.classList.remove('price-down-animation'), 1500);
+                    }
+                    
+                    // If this is the active item, update the chart
+                    if (item.classList.contains('active')) {
+                        document.getElementById('current-asset-price').textContent = priceElement.textContent;
+                        document.getElementById('current-asset-change').textContent = changeElement.textContent;
+                        document.getElementById('current-asset-change').className = `price-change ${changePercent >= 0 ? 'positive' : 'negative'}`;
+                        
+                        // Update chart with new data point (more realistic)
+                        priceChart.data.labels.push(new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
+                        priceChart.data.labels.shift();
+                        priceChart.data.datasets[0].data.push(newPrice);
+                        priceChart.data.datasets[0].data.shift();
+                        priceChart.update();
+                    }
+                });
+                
+                setTimeout(simulatePriceUpdates, 5000); // Update every 5 seconds
+            }
+            
+            // Start price updates
+            setTimeout(simulatePriceUpdates, 5000);
+            
+            // Chart time period buttons
+            document.querySelectorAll('.chart-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.chart-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Generate appropriate data for time period
+                    const basePrice = parseFloat(document.getElementById('current-asset-price').textContent.replace(/[^0-9.]/g, ''));
+                    let dataPoints, volatility;
+                    
+                    switch(this.textContent) {
+                        case '1H': dataPoints = 24; volatility = 0.005; break;
+                        case '1D': dataPoints = 24; volatility = 0.01; break;
+                        case '1W': dataPoints = 7; volatility = 0.03; break;
+                        case '1M': dataPoints = 30; volatility = 0.05; break;
+                        case '1Y': dataPoints = 12; volatility = 0.1; break;
+                        default: dataPoints = 24; volatility = 0.02;
+                    }
+                    
+                    priceChart.data.labels = Array.from({length: dataPoints}, (_, i) => 
+                        this.textContent === '1Y' ? 
+                        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][i] :
+                        this.textContent === '1M' ? 
+                        Array.from({length: 30}, (_, i) => i+1) :
+                        Array.from({length: dataPoints}, (_, i) => `${i}:00`));
+                    
+                    priceChart.data.datasets[0].data = generateRealisticPriceData(basePrice, dataPoints, volatility);
+                    priceChart.update();
+                });
+            });
+            
+            // Order form tabs
+            document.querySelectorAll('.order-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.order-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
